@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git:*, noroots:*), Read, Glob, Grep, Edit
+allowed-tools: Bash(*), Read, Glob, Grep, Edit
 description: Review literate programming quality of .nw files in current branch
 ---
 
@@ -20,8 +20,8 @@ Read relevant reference files when you need detailed examples for a specific iss
 ## Current Context
 
 - **Current branch:** !`git branch --show-current`
-- **Default remote branch:** !`git rev-parse --abbrev-ref origin/HEAD 2>/dev/null || echo "origin/main"`
-- **All .nw files in repo:** !`git ls-files '*.nw' 2>/dev/null || find . -name '*.nw' -type f | head -20`
+- **Default remote branch:** !`git rev-parse --abbrev-ref origin/HEAD 2>/dev/null`
+- **All .nw files in repo:** !`git ls-files '*.nw'`
 - **Recent commits on branch:** !`git log --oneline -5`
 
 ## Literate Programming Review Criteria
