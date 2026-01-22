@@ -3,6 +3,20 @@ allowed-tools: Bash(git:*, noroots:*), Read, Glob, Grep, Edit
 description: Review literate programming quality of .nw files in current branch
 ---
 
+## Reference Files for Detailed Guidance
+
+When reviewing, consult these reference files for detailed examples and patterns:
+
+| Topic | Reference File |
+|-------|----------------|
+| Test organization | `~/.claude/skills/literate-programming/references/testing-patterns.md` |
+| Noweb commands/syntax | `~/.claude/skills/literate-programming/references/noweb-commands.md` |
+| Variation theory violations | `~/.claude/skills/variation-theory/references/common-violations.md` |
+| LaTeX/Beamer patterns | `~/.claude/skills/didactic-notes/references/beamer-patterns.md` |
+| Semantic environments | `~/.claude/skills/didactic-notes/references/semantic-environments.md` |
+
+Read relevant reference files when you need detailed examples for a specific issue type.
+
 ## Current Context
 
 - **Current branch:** !`git branch --show-current`
@@ -26,6 +40,8 @@ Review each changed `.nw` file against these criteria from the literate-programm
 - Does it follow "whole, then parts, then back together" structure?
 - **CRITICAL**: Are concrete examples shown BEFORE stating general principles?
 - Are anti-patterns shown alongside correct patterns where helpful?
+
+**For detailed violation types with BAD/GOOD examples, read:** `~/.claude/skills/variation-theory/references/common-violations.md`
 
 ### 3. Chunk Quality
 
@@ -51,6 +67,8 @@ Review each changed `.nw` file against these criteria from the literate-programm
 - Are tests within ~10 lines of their implementation?
 - Do tests verify dependency assumptions (not just outcomes)?
 
+**For detailed patterns and anti-patterns, read:** `~/.claude/skills/literate-programming/references/testing-patterns.md`
+
 ### 6. LaTeX Documentation Quality
 
 Check for these common anti-patterns:
@@ -63,6 +81,9 @@ Check for these common anti-patterns:
 | `Section~\ref{sec:foo}` | `\cref{sec:foo}` |
 | LaTeX commands in Python docstrings | Plain text docstrings, LaTeX in prose |
 
+**For Beamer mode splits and overlay patterns, read:** `~/.claude/skills/didactic-notes/references/beamer-patterns.md`
+**For semantic environment selection, read:** `~/.claude/skills/didactic-notes/references/semantic-environments.md`
+
 ### 7. Noweb Syntax and Conventions
 
 - Use `[[code]]` to quote code in documentation (escapes LaTeX specials)
@@ -70,6 +91,8 @@ Check for these common anti-patterns:
 - Check chunk definitions are properly formatted
 - Verify no hardcoded magic numbers (use named constants)
 - Constants belong in `<<constants>>` chunks, not `<<imports>>`
+
+**For tangling/weaving commands and troubleshooting, read:** `~/.claude/skills/literate-programming/references/noweb-commands.md`
 
 ### 8. Progressive Disclosure
 
